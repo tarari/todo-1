@@ -5,8 +5,15 @@
     use App\Request;
 
     class App{
+        protected Request $request;
+
         function __construct(){
-           new Request();
+           $this->request=new Request();
+            $controller=$this->request->getController();
+            $action=$this->request->getAction();
+            $controller=new App\Controllers\$controller;
+           //dispatch controller
+
 
         }
     }
