@@ -6,7 +6,7 @@
 
     class App{
         function __construct(){
-           dd(new Request());
+           new Request();
 
         }
     }

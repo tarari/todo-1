@@ -1,6 +1,7 @@
 <?php
 
-    function dd(string $var){
-        echo '<pre>'.print_r($var).'</pre>';
+    function dd($var){
+        printf("<code>%s</code>",print_r($var));
+        die;
 
     }

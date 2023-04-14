@@ -2,9 +2,7 @@
 
 namespace App;
 
-class Controller{
+abstract class Controller{
     protected Request $request;
-
-    f
 
 }
