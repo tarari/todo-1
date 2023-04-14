@@ -1,5 +1,5 @@
 <?php
-
-$config=[
-    $dbhost=>$ENV('DB_HOST')
-];
+    
+    $dotenv=Dotenv\Dotenv::createMutable(__DIR__);
+	$dotenv->load();
+    $config=require 'config.php';
