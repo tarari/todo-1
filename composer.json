@@ -6,6 +6,7 @@
         "files": [ "src/helper.php"]
     },
     "require": {
+        "psr/container":"^1.0",
         "vlucas/phpdotenv": "^5.5",
         "psr/http-message": "^2.0"
     }

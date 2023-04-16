@@ -9,10 +9,21 @@
 
         function __construct(){
            $this->request=new Request();
-            $controller=$this->request->getController();
-            $action=$this->request->getAction();
-            $controller=new App\Controllers\$controller;
-           //dispatch controller
+           try {
+
+            $controller=$this->request->getController()??'index';
+            $action=$this->request->getAction()??'index';
+            $invokableController="App\Controllers\\".ucfirst($controller).'Controller';
+            $controller= new $invokableController();
+            $reflectionAction= (new \ReflectionClass($controller))->getMethod($action);
+            $reflectionAction->setAccessible(true);
+            $reflectionAction->invoke($controller);
+           }
+           catch(\Exception $e){
+            die($e->getMessage());
+        }
+           
+           
 
 
         }
