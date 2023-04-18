@@ -9,9 +9,11 @@ class ConfigService
 
     public function __construct()
     {
-        $dotenv = Dotenv::createImmutable(__DIR__ . '/../..');
+        $root= dirname(__DIR__, 2);
+        $dotenv = Dotenv::createImmutable($root);
         $dotenv->load();
         $this->config = $_ENV;
+        
     }
 
     public function get(string $key, $default = null)

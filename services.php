@@ -1,5 +1,5 @@
 <?php
     return [
-        'Conf'=>'conf',
-        'DB'=>'App\DB'
+        'config'=>'App/Services/ConfigServices::class',
+        'DB'=>'App/Services/DBService::class'
     ];

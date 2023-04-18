@@ -1,21 +1,20 @@
 <?php
 
 namespace App;
+use App\View;
 use App\Request;
-use App\Services;
-use App\Services\ConfigService;
-use PSpell\Config;
+
+
 
 abstract class Controller{
     protected Request $request;
-    protected Container $services;
+    protected Container $container;
+    protected View $view;
 
-
-    function __construct(ConfigService $config){
-        $this->services=new Container;
-        $this->services->set('config',$config);
-        
+    function __construct(Request $request){
+       $this->request=$request;    
     }
+
 
 
 }

@@ -1,7 +1,9 @@
 <?php
 
-    function dd($var){
-        printf("<code>%s</code>",print_r($var));
+    function dd($args=[]){
+        foreach($args as $arg){
+            echo '<code>'.var_dump($arg).'</code>';
+        }
         die;
 
     }
