@@ -1,10 +1,8 @@
 <?php
 
-use App\Container;
+use App\Services\ConfigService;
 
-    $dotenv=Dotenv\Dotenv::createMutable(__DIR__);
-	$dotenv->load();
-    $config=require 'config.php';
-    $serviceContainer=new Container;
-    $services=require 'services.php';
+   
+    new ConfigService();
+   
     
